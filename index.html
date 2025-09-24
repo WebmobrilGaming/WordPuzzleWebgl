@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Unity WebGL - Internet Enabled</title>
+  <style>
+    body { margin: 0; padding: 0; overflow: hidden; background: #000; }
+    #unity-canvas { width: 100%; height: 100%; display: block; }
+  </style>
+</head>
+<body>
+  <canvas id="unity-canvas"></canvas>
+
+  <!-- Unity WebGL loader script -->
+  <script src="Build/Word-Puzzle.loader.js"></script>
+
+  <script>
+    // Unity build configuration with crossOrigin for internet requests
+    const unityBuild = {
+      dataUrl: "Build/Word-Puzzle.data",
+      frameworkUrl: "Build/Word-Puzzle.framework.js",
+      codeUrl: "Build/Word-Puzzle.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Company",
+      productName: "WordPuzzleWebgl",
+      productVersion: "1.0",
+      crossOrigin: "anonymous"  // <-- enables web requests
+    };
+
+    const canvas = document.getElementById("unity-canvas");
+
+    // Initialize Unity instance
+    createUnityInstance(canvas, unityBuild, (progress) => {
+      console.log("Loading progress:", progress);
+    }).then((instance) => {
+      window.unityInstance = instance;
+      console.log("Unity loaded successfully!");
+    }).catch((err) => {
+      console.error("Failed to load Unity:", err);
+    });
+  </script>
+</body>
+</html>
