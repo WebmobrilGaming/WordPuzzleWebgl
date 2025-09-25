@@ -56,22 +56,6 @@
   </div>
   <div id="rotatePrompt">Please rotate your device to portrait mode</div>
 
-  <!-- Load Unity loader script first -->
-  <script src="./Build/Word-puzzle.loader.js"></script>
-
-  <!-- Initialize Unity -->
-  <script>
-    createUnityInstance(document.querySelector("#unity-canvas"), {
-      dataUrl: "./Build/Word-puzzle.data",
-      frameworkUrl: "./Build/Word-puzzle.framework.js",
-      codeUrl: "./Build/Word-puzzle.wasm",
-      streamingAssetsUrl: "StreamingAssets",
-      companyName: "%UNITY_COMPANY_NAME%",
-      productName: "Word-puzzle",
-      productVersion: "%UNITY_PRODUCT_VERSION%",
-    });
-  </script>
-
   <!-- Portrait scaling and rotate prompt -->
   <script>
     (function(){
@@ -102,6 +86,22 @@
       window.addEventListener('orientationchange', updateScale);
       document.addEventListener('DOMContentLoaded', updateScale);
     })();
+  </script>
+
+  <!-- Load Unity loader script first -->
+  <script src="./Build/Word-puzzle.loader.js"></script>
+
+  <!-- Initialize Unity -->
+  <script>
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+      dataUrl: "./Build/Word-puzzle.data",
+      frameworkUrl: "./Build/Word-puzzle.framework.js",
+      codeUrl: "./Build/Word-puzzle.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "Word-puzzle",
+      productVersion: "1.0",
+    });
   </script>
 </body>
 </html>
