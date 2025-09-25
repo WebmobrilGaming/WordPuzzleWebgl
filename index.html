@@ -69,7 +69,6 @@
         const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-        // Show rotate prompt on mobile landscape
         if (vw < 900 && vw > vh) { 
           rotatePrompt.style.display = 'flex';
         } else {
@@ -89,16 +88,16 @@
   </script>
 
   <!-- Load Unity loader script first -->
-  <script src="./Build/Word-puzzle.loader.js"></script>
+  <script src="WordPuzzleWebgl/Build/Word-puzzle.loader.js"></script>
 
   <!-- Initialize Unity -->
   <script>
     createUnityInstance(document.querySelector("#unity-canvas"), {
-      dataUrl: "./Build/Word-puzzle.data",
-      frameworkUrl: "./Build/Word-puzzle.framework.js",
-      codeUrl: "./Build/Word-puzzle.wasm",
+      dataUrl: "WordPuzzleWebgl/Build/Word-puzzle.data",
+      frameworkUrl: "WordPuzzleWebgl/Build/Word-puzzle.framework.js",
+      codeUrl: "WordPuzzleWebgl/Build/Word-puzzle.wasm",
       streamingAssetsUrl: "StreamingAssets",
-      companyName: "DefaultCompany",
+      companyName: "YourCompany",
       productName: "Word-puzzle",
       productVersion: "1.0",
     });
