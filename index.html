@@ -2,8 +2,7 @@
 <html lang="en-us">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" 
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Word-puzzle</title>
   <style>
     html, body { height:100%; margin:0; }
@@ -88,14 +87,14 @@
   </script>
 
   <!-- Load Unity loader script first -->
-  <script src="WordPuzzleWebgl/Build/Word-puzzle.loader.js"></script>
+  <script src="./Build/Word-puzzle.loader.js"></script>
 
   <!-- Initialize Unity -->
   <script>
     createUnityInstance(document.querySelector("#unity-canvas"), {
-      dataUrl: "WordPuzzleWebgl/Build/Word-puzzle.data",
-      frameworkUrl: "WordPuzzleWebgl/Build/Word-puzzle.framework.js",
-      codeUrl: "WordPuzzleWebgl/Build/Word-puzzle.wasm",
+      dataUrl: "./Build/Word-puzzle.data",
+      frameworkUrl: "./Build/Word-puzzle.framework.js",
+      codeUrl: "./Build/Word-puzzle.wasm",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "YourCompany",
       productName: "Word-puzzle",
